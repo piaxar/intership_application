@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="check_panel_width">300dp</dimen>
+    <dimen name="buttons_panel_width">50dp</dimen>
+    <dimen name="calculator_button">75dp</dimen>
+</resources>
