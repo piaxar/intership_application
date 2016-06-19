@@ -52,7 +52,7 @@ public class ItemAdapter extends BaseAdapter {
         ((TextView) view.findViewById(R.id.text_view_one_dish_price)).setText(
                 Integer.toString(product.getPrice()) + " * " + Integer.toString(productAmount));
         ((TextView) view.findViewById(R.id.text_view_total_dish_price)).setText(Integer.toString(summPerProduct));
-
+        view.setOnClickListener(new ChequeListOnClickListener(position, context));
         return view;
     }
 }

@@ -42,6 +42,19 @@ public class Cheque {
         sum += product.getPrice();
     }
 
+    public void deleteProduct(int position) {
+        Product product = products.get(position);
+        if (amount.get(position) > 1) {
+            int current = amount.get(position);
+            current = current - 1;
+            amount.set(position, current);
+        } else {
+            amount.remove(position);
+            products.remove(position);
+        }
+        sum = sum - product.getPrice();
+    }
+
     public Product getItemAt(int position) {
         return products.get(position);
     }
@@ -57,5 +70,4 @@ public class Cheque {
     public int getSumm() {
         return sum;
     }
-    // TODO add product deletion
 }
