@@ -7,12 +7,12 @@ import java.util.ArrayList;
 /**
  * Created by piaxar on 19.06.16.
  */
-public class Check {
+public class Cheque {
     private ArrayList<Product> products;
     private ArrayList<Integer> amount;
-    private int summ;
+    private int sum;
 
-    Check() {
+    Cheque() {
         products = new ArrayList<>();
         amount = new ArrayList<>();
     }
@@ -39,7 +39,7 @@ public class Check {
             amount.add(1);
         }
 
-        summ += product.getPrice();
+        sum += product.getPrice();
     }
 
     public Product getItemAt(int position) {
@@ -47,9 +47,7 @@ public class Check {
     }
 
     public int getAmountAt(int position) {
-        Log.d("CHECK", Integer.toString(amount.get(position)));
         return amount.get(position);
-
     }
 
     public int size() {
@@ -57,7 +55,7 @@ public class Check {
     }
 
     public int getSumm() {
-        return summ;
+        return sum;
     }
     // TODO add product deletion
 }
