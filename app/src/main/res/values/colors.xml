@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="cheque_background">#3F51B5</color>
+    <color name="cheque_first_column">#C8E6C9</color>
+    <color name="cheque_second_column">#C8E6C9</color>
+    <color name="cheque_third_column">#C8E6C9</color>
+    <color name="cheque_item_background">#f1c40f</color>
+    <color name="cheque_total_string_background">#ecf0f1</color>
+    <color name="main_buttons_background">#3F51B5</color>
+    <color name="products_list_background">#ecf0f1</color>
+    <color name="button_product_background">#f1c40f</color>
+    <color name="button_product_text">#3F51B5</color>
 </resources>

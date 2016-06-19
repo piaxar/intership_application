@@ -13,9 +13,8 @@ public class Product {
     public Product(String name) {
         this.name = name;
         Random random = new Random();
-        price = random.nextInt(10000);
+        price = random.nextInt(200);
         id = random.nextInt(10000);
-
     }
 
     public int getPrice() {

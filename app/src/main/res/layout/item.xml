@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/cheque_item_background"
+    android:orientation="horizontal"
+    android:padding="2dp">
 
     <TextView
+        android:id="@+id/text_view_dish_name"
+        style="@style/text_view_dish_name_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name_field"
-        style="@style/name_check"
         android:layout_weight="1"
-        android:text="Name" />
+        android:text="@string/dish_name" />
 
     <TextView
+        android:id="@+id/text_view_one_dish_price"
+        style="@style/text_view_one_dish_price_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2"
-        android:id="@+id/amount"
-        style="@style/amount_check"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:layout_weight="2" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/price_field"
-        style="@style/summ_per_el_check"
         android:layout_weight="2"
-        android:text="100$" />
+        android:text="@string/dish_price" />
 
     <TextView
+        android:id="@+id/text_view_total_dish_price"
+        style="@style/text_view_total_dish_price_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/total_summ"
-        android:id="@+id/total_summ_per_product"
         android:layout_weight="2"
-        android:text="200$" />
+        android:text="@string/dish_total_price" />
+
 </LinearLayout>
