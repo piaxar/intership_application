@@ -3,10 +3,35 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">#388E3C</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="check_text_style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="name_check" parent="check_text_style">
+        <item name="android:background">#C8E6C9</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="amount_check" parent="check_text_style">
+        <item name="android:background">#C8E6C9</item>
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+
+    <style name="summ_per_el_check" parent="check_text_style">
+        <item name="android:background">#C8E6C9</item>
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+
+    <style name="total_summ" parent="check_text_style">
+        <item name="android:background">#C8E6C9</item>
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
 </resources>

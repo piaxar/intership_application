@@ -16,89 +16,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_alignParentBottom="true"
-                android:id="@+id/calculator_panel">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_7"
-                        android:id="@+id/calculator_number_7"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_8"
-                        android:id="@+id/calculator_number_8"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_9"
-                        android:id="@+id/calculator_number_9"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/calculator_clear_button"
-                        android:id="@+id/calculator_clear"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_4"
-                        android:id="@+id/calculator_number_4"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_5"
-                        android:id="@+id/calculator_number_5"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_6"
-                        android:id="@+id/calculator_number_6"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text=" "
-                        android:id="@+id/calculator_empty"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_1"
-                        android:id="@+id/calculator_number_1"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_2"
-                        android:id="@+id/calculator_number_2"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_3"
-                        android:id="@+id/calculator_number_3"/>
-                    <Button
-                        android:layout_width="@dimen/calculator_button"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_0"
-                        android:id="@+id/calculator_number_0"/>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/calculator_panel"
                 android:orientation="horizontal"
                 android:id="@+id/total_summ_panel">
                 <TextView
@@ -117,6 +35,13 @@
                     android:layout_weight="4"
                     android:id="@+id/total_summ_text_view"/>
             </LinearLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:id="@+id/check_list_view"
+                android:layout_above="@+id/total_summ_panel"></ListView>
         </RelativeLayout>
     </LinearLayout>
     <LinearLayout
@@ -145,10 +70,13 @@
         android:orientation="vertical"
         android:layout_toRightOf="@+id/check_panel_layout"
         android:layout_toLeftOf="@id/buttons_panel_layout"
-        android:background="@color/colorAccent"
+        android:background="#FFFFF0"
         android:id="@+id/products_panel_layout">
-        <ListView
+
+        <GridView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
+            android:layout_height="match_parent"
+            android:numColumns="5"
+            android:id="@+id/grid_view"></GridView>
     </LinearLayout>
 </RelativeLayout>
