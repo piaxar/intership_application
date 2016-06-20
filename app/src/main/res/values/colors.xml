@@ -10,4 +10,7 @@
     <color name="products_list_background">#ecf0f1</color>
     <color name="button_product_background">#f1c40f</color>
     <color name="button_product_text">#3F51B5</color>
+    <color name="list_view_all_menues"></color>
+    <color name="list_view_menu_items"></color>
+    <color name="list_view_items_available"></color>
 </resources>

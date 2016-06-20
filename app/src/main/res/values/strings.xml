@@ -8,4 +8,5 @@
     <string name="dish_price">100$</string>
     <string name="dish_total_price">200$</string>
     <string name="total_sum">0</string>
+    <string name="add_new_product">Add new product</string>
 </resources>
