@@ -1,4 +1,4 @@
-package panchenko.ivan.canteen_application;
+package panchenko.ivan.canteen_application.mainActivity.Main;
 
 import android.content.Context;
 import android.view.View;

@@ -1,16 +1,16 @@
-package panchenko.ivan.canteen_application;
+package panchenko.ivan.canteen_application.mainActivity.Main;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.GridView;
 
 import java.util.ArrayList;
+
+import panchenko.ivan.canteen_application.R;
 
 /**
  * Created by piaxar on 16.06.16.
@@ -24,6 +24,9 @@ public class ButtonAdapter extends BaseAdapter {
         this.context = context;
     }
 
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
     @Override
     public int getCount() {
         return products.size();

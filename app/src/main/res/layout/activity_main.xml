@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -24,25 +25,24 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/total_sum_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/cheque_total_string_background"
-                    android:text="@string/total_value_string"
-                    android:textSize="@dimen/text_big_size" />
+                    android:text="@string/total_value_string" />
 
                 <TextView
                     android:id="@+id/text_view_cheque_sum"
+                    style="@style/total_sum_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:background="@color/cheque_total_string_background"
-                    android:text="@string/total_sum"
-                    android:textSize="@dimen/text_big_size" />
+                    android:text="@string/total_sum" />
             </LinearLayout>
 
             <ListView
                 android:id="@+id/list_view_cheque_items"
+                style="@style/cheque_list_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@+id/linear_layout_cheque_sum"
@@ -57,7 +57,6 @@
         android:layout_alignParentRight="true"
         android:background="@color/main_buttons_background"
         android:orientation="vertical">
-
         <Button
             android:id="@+id/button_accept_cheque"
             android:layout_width="match_parent"
@@ -73,7 +72,7 @@
             android:text="@string/cancel_button_text" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/products_panel_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -84,8 +83,20 @@
 
         <GridView
             android:id="@+id/grid_view_products"
+            style="@style/grid_view_products"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/grid_view_products"></GridView>
-    </LinearLayout>
+            android:layout_height="match_parent"></GridView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/button_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/grid_view_products"
+            android:layout_alignRight="@id/grid_view_products"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:src="@android:drawable/ic_menu_edit"
+            app:fabSize="normal" />
+
+    </RelativeLayout>
 </RelativeLayout>

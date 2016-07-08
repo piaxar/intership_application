@@ -1,42 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/list_view_all_menues">
+        android:background="@color/list_view_all_menues"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_all_menus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/header_menu"
+            android:gravity="center"
+            android:text="@string/all_menus"
+            android:textSize="@dimen/text_big_size" />
 
         <ListView
-            android:id="@+id/list_view_all_menues"
+            android:id="@+id/list_view_all_menus"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_below="@id/text_view_all_menus"></ListView>
 
-    <LinearLayout
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/button_add_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/list_view_all_menus"
+            android:layout_alignRight="@id/list_view_all_menus"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:src="@android:drawable/ic_input_add"
+            app:fabSize="normal" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/list_view_menu_items">
+        android:background="@color/list_view_menu_items"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_menu_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/header_menu"
+            android:gravity="center"
+            android:text="@string/products_in_selected_menu"
+            android:textSize="@dimen/text_big_size" />
 
         <ListView
             android:id="@+id/list_view_menu_items"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_below="@id/text_view_menu_items"></ListView>
 
-    <LinearLayout
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/button_apply_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/list_view_menu_items"
+            android:layout_alignRight="@id/list_view_menu_items"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:src="@android:drawable/ic_menu_set_as"
+            app:fabSize="normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/list_view_items_available">
+        android:background="@color/list_view_items_available"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_all_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/header_menu"
+            android:gravity="center"
+            android:text="@string/all_available_products"
+            android:textSize="@dimen/text_big_size" />
 
         <ListView
             android:id="@+id/list_view_items_available"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_below="@+id/text_view_all_products"></ListView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/button_add_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/list_view_items_available"
+            android:layout_alignRight="@id/list_view_items_available"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:src="@android:drawable/ic_input_add"
+            app:fabSize="normal" />
+    </RelativeLayout>
 </LinearLayout>

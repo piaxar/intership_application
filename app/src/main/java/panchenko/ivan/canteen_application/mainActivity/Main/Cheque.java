@@ -1,6 +1,4 @@
-package panchenko.ivan.canteen_application;
-
-import android.util.Log;
+package panchenko.ivan.canteen_application.mainActivity.Main;
 
 import java.util.ArrayList;
 
