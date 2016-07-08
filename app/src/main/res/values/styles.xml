@@ -4,27 +4,27 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="cheque_item">
+        <item name="android:background">@color/cheque_item_background</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
     <style name="cheque_text_view_style">
+        <item name="android:textColor">@color/dark_text</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/text_size</item>
-    </style>
-
-    <style name="text_view_dish_name_style" parent="cheque_text_view_style">
-        <item name="android:background">@color/cheque_first_column</item>
-        <item name="android:paddingLeft">@dimen/space_between_columns</item>
-        <item name="android:gravity">left</item>
-    </style>
-
-    <style name="text_view_one_dish_price_style" parent="cheque_text_view_style">
-        <item name="android:background">@color/cheque_second_column</item>
         <item name="android:layout_marginLeft">@dimen/space_between_columns</item>
+        <item name="android:layout_marginBottom">20dp</item>
     </style>
 
-    <style name="text_view_total_dish_price_style" parent="cheque_text_view_style">
-        <item name="android:background">@color/cheque_third_column</item>
-        <item name="android:layout_marginLeft">@dimen/space_between_columns</item>
+    <style name="cheque_list_view">
+        <item name="android:layout_margin">10dp</item>
     </style>
 
+    <style name="total_sum_text">
+        <item name="android:textColor">@color/light_text</item>
+        <item name="android:background">@color/cheque_total_string_background</item>
+        <item name="android:textSize">@dimen/text_big_size</item>
+    </style>
     <style name="grid_view_products">
         <item name="android:numColumns">5</item>
     </style>

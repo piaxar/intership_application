@@ -1,4 +1,4 @@
-package panchenko.ivan.canteen_application;
+package panchenko.ivan.canteen_application.mainActivity.Main;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import panchenko.ivan.canteen_application.R;
 
 /**
  * Created by piaxar on 19.06.16.

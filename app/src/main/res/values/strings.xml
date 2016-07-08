@@ -9,4 +9,7 @@
     <string name="dish_total_price">200$</string>
     <string name="total_sum">0</string>
     <string name="add_new_product">Add new product</string>
+    <string name="all_menus">All menus:</string>
+    <string name="products_in_selected_menu">Products in selected menu:</string>
+    <string name="all_available_products">All available products:</string>
 </resources>
