@@ -5,15 +5,19 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:adjustViewBounds="true"
+        android:src="@drawable/delete" />
     <TextView
         android:id="@+id/text_view_dish_name"
         style="@style/cheque_text_view_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:layout_weight="1"
         android:gravity="left"
-        android:paddingLeft="20dp"
         android:text="@string/dish_name" />
 
     <TextView

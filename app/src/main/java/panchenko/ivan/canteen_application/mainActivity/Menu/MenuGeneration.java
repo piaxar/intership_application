@@ -3,9 +3,9 @@ package panchenko.ivan.canteen_application.mainActivity.Menu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class MenuGeneration extends AppCompatActivity {
     MenuAdapter menuAdapter;
     ProductsAdapter productsAdapter;
     AllProductsAdapter allProductsAdapter;
-    FloatingActionButton chooseMenu;
+    ImageButton chooseMenu;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +34,7 @@ public class MenuGeneration extends AppCompatActivity {
         firstListView = (ListView) findViewById(R.id.list_view_all_menus);
         secondListView = (ListView) findViewById(R.id.list_view_menu_items);
         thirdListView = (ListView) findViewById(R.id.list_view_items_available);
-        chooseMenu = (FloatingActionButton) findViewById(R.id.button_apply_menu);
+        chooseMenu = (ImageButton) findViewById(R.id.button_apply_menu);
 
         menus = new ArrayList<>();
         inMenue = new ArrayList<>();

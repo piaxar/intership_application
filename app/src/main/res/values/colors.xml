@@ -2,18 +2,22 @@
 <resources>
     <color name="cheque_background">#424242</color>
     <color name="dark_text">#000000</color>
+    <color name="middle_gray">#424242</color>
+    <color name="middle_gray2">#BDBDBD</color>
     <color name="light_text">#FFFFFF</color>
-    <color name="cheque_first_column">#8A79DD</color>
-    <color name="cheque_second_column">#8A79DD</color>
-    <color name="cheque_third_column">#8A79DD</color>
+    <color name="white_background">#FFFFFF</color>
     <color name="cheque_item_background">#EEEEEE</color>
+    <color name="cheque_item_background_selected">#757575</color>
+    <color name="main_buttons_color">#EEEEEE</color>
     <color name="cheque_total_string_background">#212121</color>
-    <color name="main_buttons_background">#3F51B5</color>
-    <color name="products_list_background">#ecf0f1</color>
+    <color name="main_buttons_background">#424242</color>
+    <color name="products_list_background">#B2DFDB</color>
     <color name="button_product_background">#f1c40f</color>
     <color name="button_product_text">#3F51B5</color>
     <color name="list_view_all_menues">#C8E6C9</color>
     <color name="list_view_menu_items">#3F51B5</color>
     <color name="list_view_items_available">#C8E6C9</color>
-    <color name="header_menu">#FFF123</color>
+    <color name="header_menu">#43A047</color>
+    <color name="light_green">#E8F5E9</color>
+    <color name="dark_green_stroke">#7CB342</color>
 </resources>

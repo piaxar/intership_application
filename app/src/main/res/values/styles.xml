@@ -3,29 +3,75 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowNoTitle">true</item>
     </style>
-
     <style name="cheque_item">
         <item name="android:background">@color/cheque_item_background</item>
         <item name="android:layout_margin">15dp</item>
     </style>
+
+    <style name="menu_item" parent="cheque_item"></style>
     <style name="cheque_text_view_style">
         <item name="android:textColor">@color/dark_text</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/text_size</item>
-        <item name="android:layout_marginLeft">@dimen/space_between_columns</item>
-        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
     </style>
 
+    <style name="all_menues_text_view" parent="cheque_text_view_style">
+        <item name="android:gravity">left</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
     <style name="cheque_list_view">
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">8dp</item>
     </style>
 
+    <style name="all_menus_list" parent="cheque_list_view">
+        <item name="android:layout_margin">15dp</item>
+    </style>
     <style name="total_sum_text">
         <item name="android:textColor">@color/light_text</item>
         <item name="android:background">@color/cheque_total_string_background</item>
         <item name="android:textSize">@dimen/text_big_size</item>
     </style>
+
+    <style name="header_menu">
+        <item name="android:textColor">@color/light_text</item>
+        <item name="android:background">@color/cheque_total_string_background</item>
+        <item name="android:textSize">@dimen/text_big_size</item>
+    </style>
+
+    <style name="header">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/header_menu</item>
+        <item name="android:textSize">@dimen/text_big_size</item>
+        <item name="android:textColor">@color/light_green</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
     <style name="grid_view_products">
-        <item name="android:numColumns">5</item>
+        <item name="android:numColumns">4</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+    <style name="menu_products_list">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:dividerHeight">4dp</item>
+        <item name="android:divider">@android:color/transparent</item>
+    </style>
+
+    <style name="all_products_list" parent="menu_products_list">
+
+    </style>
+
+    <style name="product_item">
+        <item name="android:textColor">@color/dark_text</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:padding">6dp</item>
     </style>
 </resources>
