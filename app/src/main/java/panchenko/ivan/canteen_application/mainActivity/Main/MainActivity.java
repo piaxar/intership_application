@@ -2,11 +2,11 @@ package panchenko.ivan.canteen_application.mainActivity.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     GridView todayMenuGridView;
     ListView cheque;
     Button cancelCheckButton, acceptCheckButton;
-    FloatingActionButton editButton;
+    ImageButton editButton;
     ArrayList<Product> products;
     ButtonAdapter buttonAdapter;
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         totalCheckSummView = (TextView) findViewById(R.id.text_view_cheque_sum);
         cancelCheckButton = (Button) findViewById(R.id.button_cancel_cheque);
         acceptCheckButton = (Button) findViewById(R.id.button_accept_cheque);
-        editButton = (FloatingActionButton) findViewById(R.id.button_edit);
+        editButton = (ImageButton) findViewById(R.id.button_edit);
 
         editButton.setOnClickListener(this);
 

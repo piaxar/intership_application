@@ -49,16 +49,16 @@ public class ButtonAdapter extends BaseAdapter {
         if (convertView == null) {
             button = new Button(context);
             GridView.LayoutParams params = new GridView.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             button.setLayoutParams(params);
             button.setPadding(8, 8, 8, 8);
         } else {
             button = (Button) convertView;
         }
         button.setText(products.get(position).getName());
-        button.setTextColor(ContextCompat.getColor(context, R.color.button_product_text));
+        button.setTextColor(ContextCompat.getColor(context, R.color.dark_text));
         // TODO: 19.06.16 add drawable background
-        button.setBackgroundColor(ContextCompat.getColor(context, R.color.button_product_background));
+        button.setBackground(ContextCompat.getDrawable(context, R.drawable.product_button));
         button.setId(position);
         button.setOnClickListener(new ProductOnClickListener(
                 products.get(position), context));

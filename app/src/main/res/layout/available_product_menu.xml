@@ -2,19 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/product_menu_button"
     android:orientation="horizontal">
-
-    <TextView
-        android:id="@+id/text_view_dish_name"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="@string/dish_name" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="15"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="10"
         android:adjustViewBounds="true"
         android:src="@drawable/delete" />
+
+    <TextView
+        android:id="@+id/text_view_dish_name"
+        style="@style/product_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/dish_name" />
+
+
 </LinearLayout>
