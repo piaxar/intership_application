@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         acceptCheckButton = (Button) findViewById(R.id.button_accept_cheque);
         editButton = (ImageButton) findViewById(R.id.button_edit);
 
+        cancelCheckButton.setOnClickListener(this);
+        acceptCheckButton.setOnClickListener(this);
         editButton.setOnClickListener(this);
 
         todayMenuGridView = (GridView) findViewById(R.id.grid_view_products);
@@ -67,12 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAdapter = new ButtonAdapter(this, products);
         itemAdapter = new ItemAdapter(this, productsInCheque);
 
-        // TODO generate array from DB
-        for (int i = 1; i < 100; i++) {
-            Product prod = new Product(Integer.toString(i));
-            products.add(prod);
-        }
-
         cheque.setAdapter(itemAdapter);
         todayMenuGridView.setAdapter(buttonAdapter);
     }
@@ -81,9 +77,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_edit:
-                // TODO get new menu from request
                 Intent intent = new Intent(this, MenuGeneration.class);
                 startActivityForResult(intent, REQUEST_CODE);
+                break;
+            case R.id.button_cancel_cheque:
+                productsInCheque.clearCheque();
+                itemAdapter.notifyDataSetChanged();
+                updateSumm();
+                break;
+            case R.id.button_accept_cheque:
+                // TODO add event to cope with cheque
+                break;
         }
     }
 
