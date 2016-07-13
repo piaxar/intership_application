@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -20,12 +21,13 @@ public class MenuGeneration extends AppCompatActivity {
 
     static Holder holder;
     ListView firstListView, secondListView, thirdListView;
-    ArrayList<Product> inMenue, notInMenu, allProducts;
+    ArrayList<Product> inMenu, notInMenu, allProducts;
     ArrayList<Menu> menus;
     MenuAdapter menuAdapter;
     ProductsAdapter productsAdapter;
     AllProductsAdapter allProductsAdapter;
-    ImageButton chooseMenu;
+    Button chooseMenu, addProduct;
+    ImageButton addMenu;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,36 +36,29 @@ public class MenuGeneration extends AppCompatActivity {
         firstListView = (ListView) findViewById(R.id.list_view_all_menus);
         secondListView = (ListView) findViewById(R.id.list_view_menu_items);
         thirdListView = (ListView) findViewById(R.id.list_view_items_available);
-        chooseMenu = (ImageButton) findViewById(R.id.button_apply_menu);
+        chooseMenu = (Button) findViewById(R.id.button_apply_menu);
+        addMenu = (ImageButton) findViewById(R.id.button_add_menu);
+        addProduct = (Button) findViewById(R.id.button_add_product);
 
         menus = new ArrayList<>();
-        inMenue = new ArrayList<>();
+        inMenu = new ArrayList<>();
         notInMenu = new ArrayList<>();
         allProducts = new ArrayList<>();
 
         holder = new Holder();
 
-        for (int i = 0; i < 5; i++) {
-            Menu menu = new Menu();
-            menu.name = Integer.toString(i);
-            ArrayList<Product> products = new ArrayList<>();
-            for (int j = i; j < (i + 3); j++) {
-                Product prod = new Product(Integer.toString(j));
-                products.add(prod);
-                allProducts.add(prod);
-
-            }
-            menu.products = products;
-            menus.add(menu);
-        }
+        menus = getMenus();
 
         menuAdapter = new MenuAdapter(getApplicationContext(), menus);
-        productsAdapter = new ProductsAdapter(getApplicationContext(), inMenue);
+        productsAdapter = new ProductsAdapter(getApplicationContext(), inMenu);
         allProductsAdapter = new AllProductsAdapter(getApplicationContext(), notInMenu);
 
 
         firstListView.setAdapter(menuAdapter);
         secondListView.setAdapter(productsAdapter);
+        // TODO when menu becomes empty, maby we need to delete it?
+        // if yes, then you need to check is secondListView adapter is empty
+
         thirdListView.setAdapter(allProductsAdapter);
         chooseMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +71,52 @@ public class MenuGeneration extends AppCompatActivity {
                 finish();
             }
         });
+        addMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO add new menu addition
+            }
+        });
+        addProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO add product addition
+                //also make this button unavailable until
+                //one of the menus will be selected
+            }
+        });
+    }
+
+    @Override
+    protected void onStop() {
+        //TODO sync with server
+        super.onStop();
+    }
+
+    /**
+     * This method must return all available menus from server
+     * also in this method I set up allProducts array,
+     * but you need to split it into new method
+     *
+     * @return array list of menus
+     */
+    private ArrayList<Menu> getMenus() {
+        ArrayList<Menu> allMenus = new ArrayList<Menu>();
+        // TODO fill getting menus from server
+        for (int i = 0; i < 30; i++) {
+            Menu menu = new Menu();
+            menu.name = Integer.toString(i);
+            ArrayList<Product> products = new ArrayList<>();
+            for (int j = i; j < (i + 3); j++) {
+                Product prod = new Product(Integer.toString(j));
+                products.add(prod);
+                allProducts.add(prod);
+
+            }
+            menu.products = products;
+            allMenus.add(menu);
+        }
+        return allMenus;
     }
 
     public class Holder {
@@ -130,4 +171,5 @@ public class MenuGeneration extends AppCompatActivity {
             return notInMenue;
         }
     }
+
 }

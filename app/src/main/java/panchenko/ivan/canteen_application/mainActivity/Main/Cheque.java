@@ -13,8 +13,14 @@ public class Cheque {
     Cheque() {
         products = new ArrayList<>();
         amount = new ArrayList<>();
+        sum = 0;
     }
 
+    public void clearCheque() {
+        products = new ArrayList<>();
+        amount = new ArrayList<>();
+        sum = 0;
+    }
     public void addProduct(Product product) {
         int id = product.getId();
         boolean alreadyAdded = false;

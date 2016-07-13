@@ -58,6 +58,7 @@ public class ButtonAdapter extends BaseAdapter {
         button.setText(products.get(position).getName());
         button.setTextColor(ContextCompat.getColor(context, R.color.dark_text));
         // TODO: 19.06.16 add drawable background
+        // I mean pictures of product
         button.setBackground(ContextCompat.getDrawable(context, R.drawable.product_button));
         button.setId(position);
         button.setOnClickListener(new ProductOnClickListener(

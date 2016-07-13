@@ -9,6 +9,7 @@ import java.util.Random;
  * Created by piaxar on 16.06.16.
  */
 public class Product implements Parcelable {
+
     public static final Parcelable.Creator<Product> CREATOR
             = new Parcelable.Creator<Product>() {
         public Product createFromParcel(Parcel in) {
@@ -20,7 +21,6 @@ public class Product implements Parcelable {
 
         @Override
         public Product[] newArray(int size) {
-            // TODO Auto-generated method stub
             return new Product[size];
         }
     };
@@ -28,6 +28,7 @@ public class Product implements Parcelable {
     private int price;
     private int id;
 
+    //TODO add pictures
     public Product(String name) {
         this.name = name;
         Random random = new Random();
