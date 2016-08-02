@@ -17,13 +17,12 @@ import panchenko.ivan.canteen_application.mainActivity.Menu.MenuGeneration;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static TextView totalCheckSummView;
-    static Cheque productsInCheque;
+    static TextView totalCheckSumTextView;
+    static Cheque cheque;
     static ItemAdapter itemAdapter;
 
-
     GridView todayMenuGridView;
-    ListView cheque;
+    ListView chequeListView;
     Button cancelCheckButton, acceptCheckButton;
     ImageButton editButton;
     ArrayList<Product> products;
@@ -31,45 +30,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     int REQUEST_CODE = 1;
 
-    static void updateSumm() {
-        int summ = productsInCheque.getSumm();
-        totalCheckSummView.setText(Integer.toString(summ));
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
-            Bundle extras = data.getExtras();
-            ArrayList<Product> menu = extras.getParcelableArrayList("menu");
-            buttonAdapter.setProducts(menu);
-            buttonAdapter.notifyDataSetChanged();
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        totalCheckSummView = (TextView) findViewById(R.id.text_view_cheque_sum);
+        totalCheckSumTextView = (TextView) findViewById(R.id.text_view_cheque_sum);
         cancelCheckButton = (Button) findViewById(R.id.button_cancel_cheque);
         acceptCheckButton = (Button) findViewById(R.id.button_accept_cheque);
         editButton = (ImageButton) findViewById(R.id.button_edit);
+        todayMenuGridView = (GridView) findViewById(R.id.grid_view_products);
+        chequeListView = (ListView) findViewById(R.id.list_view_cheque_items);
 
         cancelCheckButton.setOnClickListener(this);
         acceptCheckButton.setOnClickListener(this);
         editButton.setOnClickListener(this);
 
-        todayMenuGridView = (GridView) findViewById(R.id.grid_view_products);
-        cheque = (ListView) findViewById(R.id.list_view_cheque_items);
-
+        // array of <Product> that contain all products in current menu
         products = new ArrayList<>();
-        productsInCheque = new Cheque();
+        cheque = new Cheque();
         buttonAdapter = new ButtonAdapter(this, products);
-        itemAdapter = new ItemAdapter(this, productsInCheque);
+        itemAdapter = new ItemAdapter(this, cheque);
 
-        cheque.setAdapter(itemAdapter);
+        chequeListView.setAdapter(itemAdapter);
         todayMenuGridView.setAdapter(buttonAdapter);
     }
 
@@ -81,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivityForResult(intent, REQUEST_CODE);
                 break;
             case R.id.button_cancel_cheque:
-                productsInCheque.clearCheque();
+                cheque.clearCheque();
                 itemAdapter.notifyDataSetChanged();
                 updateSumm();
                 break;
@@ -91,5 +74,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Update TextView with sum from cheque
+     */
+    static void updateSumm() {
+        int summ = cheque.getSumm();
+        totalCheckSumTextView.setText(Integer.toString(summ));
+    }
 
+    /**
+     * Method after getting menu from MenuGeneration activity
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+            Bundle extras = data.getExtras();
+            ArrayList<Product> menu = extras.getParcelableArrayList("menu");
+            buttonAdapter.setProducts(menu);
+            buttonAdapter.notifyDataSetChanged();
+        }
+    }
 }
