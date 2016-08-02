@@ -19,7 +19,7 @@ public class ProductOnClickListener implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Toast.makeText(context, "Product " + product.getName() + " added", Toast.LENGTH_SHORT).show();
-        MainActivity.productsInCheque.addProduct(product);
+        MainActivity.cheque.addProduct(product);
         MainActivity.itemAdapter.notifyDataSetChanged();
         MainActivity.updateSumm();
     }

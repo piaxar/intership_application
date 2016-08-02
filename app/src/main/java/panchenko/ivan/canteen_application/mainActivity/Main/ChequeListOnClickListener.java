@@ -18,7 +18,7 @@ public class ChequeListOnClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        MainActivity.productsInCheque.deleteProduct(position);
+        MainActivity.cheque.deleteProduct(position);
         MainActivity.itemAdapter.notifyDataSetChanged();
         MainActivity.updateSumm();
         Toast.makeText(context, "Product deleted", Toast.LENGTH_SHORT).show();
